@@ -1,0 +1,332 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_ACP_CUSTOMIZER_TITLE}</h1>
+
+<form id="acp_board2" class="leno" method="post" enctype="multipart/form-data" action="{{ U_ACTION }}">
+
+	<fieldset>
+		<legend>{L_SELECT_DEMO}</legend>
+		<dl>
+			<dt><label for="select_demo"> {L_CHOOSE_DEMO}{L_COLON} </label></dt>
+			<dd><input type="radio" class="radio" id="select_demo" name="select_demo" value="1"  onclick="fix();back();"  <!-- IF SELECT_DEMO == 1 -->checked="checked"<!-- ENDIF -->/> Demo 1 : right menu  &nbsp; 
+			<input type="radio" class="radio" name="select_demo" value="2"  id="demt"  onclick="fix();back();"  <!-- IF SELECT_DEMO == 2 -->checked="checked"<!-- ENDIF --> /> Demo 2 : top menu &nbsp; 
+			<input type="radio" class="radio" name="select_demo" value="3" id="demth" onclick="fix();back();"  <!-- IF SELECT_DEMO == 3 -->checked="checked"<!-- ENDIF --> /> Demo 3:  top menu + header background</dd>
+		</dl>
+		<dl id="mode" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF --> >
+			<dt><label for="select_demo"> {L_D_L_DARK}{L_COLON} </label></dt>		
+			<dd><input type="radio" class="radio" id="mode_theme" name="mode_theme" value="0"   <!-- IF not MODE_THEME -->checked="checked"<!-- ENDIF --> /> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="mode_theme" value="1" <!-- IF MODE_THEME -->checked="checked"<!-- ENDIF -->/> {L_NO}</dd>
+		</dl>
+		
+		<dl id="full" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF -->>
+			<dt ><label  for="background_full">{L_D_L_BACKGROUND_FULL}</label></dt>
+			<dd><input type="radio" class="radio" id="background_full" name="background_full" value="1"  <!-- IF BACKGROUND_FULL -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="background_full" value="0" <!-- IF not BACKGROUND_FULL -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+	
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_UPLOAD}</legend>
+		<dl>
+			<dt><label for="logo_upload">{L_UPLOAD_LOGO} </label><br /><p>Upload your logo here . preferred height : 120px </p><br /><img class="upload-logo" src="{LOGO_THEME}"></dt>
+			<dd><input type="file" name="logo_upload" id="logo_upload"></dd>
+		</dl>
+		
+		<hr>
+		
+		<dl>
+			<dt><label for="logo_upload_login_page">{L_UPLOAD_LOGO}</label><br /><p>This logo is shown for login/register page. Preferred logo height : 200 px and in white background</p><br /><img class="upload-logo-login" src="{LOGO_LOGIN}" ></dt>
+			<dd><input type="file" name="logo_upload_login_page" id="logo_upload_login_page"></dd>
+		</dl>
+		
+		<hr>
+		
+		<dl>
+			<dt><label for="favicon">{L_UPLOAD_FAVICON}</label><br /><p>Upload favicon file . Preferred size  : 10*10 px</p><br /><img class="upload-favicon" src="{FAVICON}" ></dt>
+			<dd><input type="file" name="favicon" id="favicon"></dd>
+		</dl>
+		
+		<hr>
+		
+		<dl id="uplb" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF --> >
+			<dt><label for="background">{L_UPLOAD_BACKGROUND}</label><br /><p>Upload header background here . Preferred size : 300*1200 px</p><br /><img class="upload-background"src="{BACKGROUND}" ></dt>
+			<dd><input type="file" name="background" id="background"></dd>
+		</dl>
+		<dl id="uplb2" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF -->>
+			<dt><label for="background2">{L_UPLOAD_BACKGROUND}</label><br /><p>Upload photo slider (this is optional only if you want to use slider)</p><br /><img class="upload-background"src="{BACKGROUND2}" ></dt>
+			<dd><input type="file" name="background2" id="background2"></dd>
+		</dl>	
+		<dl id="uplb3" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF --> >
+			<dt><label for="background3">{L_UPLOAD_BACKGROUND}</label><br /><p>Upload photo slider (this is optional only if you want to use slider)</p><br /><img class="upload-background"src="{BACKGROUND3}" ></dt>
+			<dd><input type="file" name="background3" id="background3"></dd>
+		</dl>			
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_GENERAL_SETTINGS}</legend>
+		<dl >
+		<dt><label for="use_loading">{L_D_L_LOADING}</label></dt>
+			<dd><input type="radio" class="radio" id="use_loading" name="use_loading" value="1"   <!-- IF USE_LOADING -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="use_loading" value="0" <!-- IF not USE_LOADING -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		<dl id="u_sidebar" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF -->>
+		<dt><label for="sidebar">{L_D_L_SIDEBAR}</label></dt>
+			<dd><input type="radio" class="radio" id="sidebar" name="sidebar" value="1"   <!-- IF SIDEBAR -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="sidebar" value="0" <!-- IF not SIDEBAR -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		<dl id="p_sidebar" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF -->>
+		<dt><label for="position_sidebar">{L_PO_SIDEBAR}</label></dt>
+			<dd><input type="radio" class="radio" id="position_sidebar" name="position_sidebar" value="1"   <!-- IF POSITION_SIDEBAR -->checked="checked"<!-- ENDIF -->/> {L_LEFT} &nbsp; 
+			<input type="radio" class="radio" name="position_sidebar" value="0" <!-- IF not POSITION_SIDEBAR -->checked="checked"<!-- ENDIF --> /> {L_RIGHT}</dd>
+		</dl>
+		<dl id="snow" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF --> >
+		<dt><label for="efect_snow">{L_EFECT_SNOW}</label></dt>
+			<dd><input type="radio" class="radio" id="efect_snow" name="efect_snow" value="1"   <!-- IF EFECT_SNOW -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="efect_snow" value="0" <!-- IF not EFECT_SNOW -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>			
+		<dl >
+			<dt><label for="footer">{L_D_SHOWFOOTER}</label></dt>
+			<dd><input type="radio" class="radio" id="footer" name="footer" value="1"   <!-- IF FOOTER -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="footer" value="0"  <!-- IF not FOOTER -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		
+		<dl id="uplb4" <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF -->>
+			<dt><label  for="use_slider">{L_D_L_USE_SLIDER}</label></dt>
+			<dd><input type="radio" class="radio" id="use_slider" name="use_slider" value="1"  onclick="changelfont()" <!-- IF USE_SLIDER -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="use_slider" value="0" <!-- IF not USE_SLIDER -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		<dl>
+			<dt><label  for="position_crumb">{L_D_L_POSITION_CRUMB}</label></dt>
+			<dd><input type="radio" class="radio" id="position_crumb" name="position_crumb" value="1"  onclick="changelfont()" <!-- IF POSITION_CRUMB -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="position_crumb" value="0" <!-- IF not POSITION_CRUMB -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		
+		<dl>
+			<dt><label  for="changefont">{L_D_L_CHANGE_FONT}</label></dt>
+			<dd><input type="radio" class="radio" id="changefont" name="changefont" value="1"  onclick="changelfont()" <!-- IF CHANGEFONT -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="changefont" value="0"  onclick="changelfont()" <!-- IF not CHANGEFONT -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>			
+					
+		<dl id="font_theme" <!-- IF not CHANGEFONT --> style="display:none"<!-- ENDIF -->>
+			<dt><label for="font">{L_Y_C_CHANGE_FONT}</label></dt>
+			<dd>link : <input id="font" type="text" name="font"  value="{FONT_TEXT}" /> font family : <input id="font_name"  type="text" name="font_name" value="{FONT_NAME}" /></dd>
+		</dl>
+		
+		<dl>
+			<dt><label for="customizer_color">{L_D_L_CHANGE_COLOR_LINK}</label></dt>
+			<dd><input type="radio" class="radio" id="customizer_color" name="customizer_color" value="1"  onclick="colorop()" <!-- IF CUSTMIZER_COLOR -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="customizer_color" value="0"  onclick="colorop()" <!-- IF not CUSTMIZER_COLOR -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+			
+		<dl id="color_op" <!-- IF not CUSTMIZER_COLOR --> style="display:none" <!-- ENDIF --> >
+			<dt><label for="color_theme">{L_CHOOSE_COLOR}{L_COLON} </label></dt>
+			<dd><input id="color_theme" type="text" name="color_theme" value="{COLOR_THEME}" /></dd>
+		</dl>
+		
+		<dl id="menu_fix"  <!-- IF SELECT_DEMO == 1 --> style="display:none"<!-- ENDIF -->  >
+			<dt><label for="fix_menu">{L_D_L_FIX_MENU}</label></dt>
+			<dd><input type="radio" class="radio" id="fix_menu" name="fix_menu" value="1"   <!-- IF FIX_MENU -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="fix_menu" value="0"  <!-- IF not FIX_MENU -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		
+		<dl id="para"  <!-- IF SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF --> >
+			<dt><label for="parallax">{L_D_L_PARALLAX} </label></dt>
+			<dd><input type="radio" class="radio" id="parallax" name="parallax" value="1"   <!-- IF PARALLAX -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="parallax" value="0" <!-- IF not PARALLAX -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+	
+		<dl id="gra"  <!-- IF  SELECT_DEMO != 3 --> style="display:none"<!-- ENDIF -->>
+			<dt><label  for="gradient_color">{L_D_L_GRADIENT}</label></dt>
+			<dd><input type="radio" class="radio" id="gradient_color" name="gradient_color" value="1"  onclick="gradient()" <!-- IF GRADIENT_COLOR -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="gradient_color" value="0"  onclick="gradient()" <!-- IF not GRADIENT_COLOR -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+			
+		<dl id="gra_color" <!-- IF not GRADIENT_COLOR  --> style="display:none" <!-- ENDIF -->>
+			<dt><label for="from_color">{L_CHOOSE_COLOR}{L_COLON}</label></dt>
+			<dd>from : <input id="from_color" type="text" name="from_color" value="{FROM_COLOR}" /> to : <input type="text" id="to_color" name="to_color" value="{TO_COLOR}" /></dd>
+		</dl>
+	
+		<dl id="remove_gra" <!-- IF not GRADIENT_COLOR  --> style="display:none" <!-- ENDIF -->>
+		<dt><label for="use_gradient">{L_GRADIENT}</label></dt>
+			<dd><input type="radio" class="radio" id="use_gradient" name="use_gradient" value="1"   <!-- IF USE_GRADIENT -->checked="checked"<!-- ENDIF -->/> {L_ACTIVE} &nbsp; 
+			<input type="radio" class="radio" name="use_gradient" value="0" <!-- IF not USE_GRADIENT -->checked="checked"<!-- ENDIF --> /> {L_INACTIVE}</dd>
+		</dl>
+		
+	</fieldset>
+
+	
+	<fieldset>
+	<legend>{L_MENU_SETTINGS}</legend>
+	
+		<dl >
+			<dt><label for="n_link_one">First custom menu:</label></dt>
+			<dd>{L_NAME_MENU}{L_COLON}<input id="n_link_one" type="text" name="n_linkone"  value="{N_LINKONE}" /><br />{L_LINK_MENU}{L_COLON}<input id="link_one" type="text" name="linkone"  value="{LINKONE}" /> &nbsp; <br />{L_ICON_MENU}{L_COLON}<input id="i_link_one" type="text" name="i_linkone"  value="{I_LINKONE}" /></dd>
+		</dl>
+		
+		<dl >
+			<dt><label for="nlinko">{L_D_L_NEWTAB} </label></dt>
+			<dd><input type="radio" class="radio" id="nlinko" name="nlinko" value="1"   <!-- IF N_LINK_O -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="nlinko" value="0" <!-- IF not N_LINK_O -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		
+		<dl >
+			<dt><label for="n_link_two">Second custom menu:</label></dt>
+			<dd>{L_NAME_MENU}{L_COLON}<input id="n_link_two" type="text" name="n_linktwo"  value="{N_LINKTWO}" /><br />{L_LINK_MENU}{L_COLON}<input id="link_two" type="text" name="linktwo"  value="{LINKTWO}" /> &nbsp; <br />{L_ICON_MENU}{L_COLON}<input id="i_link_two" type="text" name="i_linktwo"  value="{I_LINKTWO}" /></dd>
+		</dl>
+
+		<dl >
+			<dt><label for="nlinkt">{L_D_L_NEWTAB} </label></dt>
+			<dd><input type="radio" class="radio" id="nlinkt" name="nlinkt" value="1"   <!-- IF N_LINK_T -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="nlinkt" value="0" <!-- IF not N_LINK_T -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		
+		<dl >
+			<dt><label for="n_link_three">Third custom menu:</label></dt>
+			<dd>{L_NAME_MENU}{L_COLON}<input id="n_link_three" type="text" name="n_linkthree"  value="{N_LINKTHREE}" /><br />{L_LINK_MENU}{L_COLON}<input id="link_three" type="text" name="linkthree"  value="{LINKTHREE}" /> &nbsp; <br />{L_ICON_MENU}{L_COLON}<input id="i_link_three" type="text" name="i_linkthree"  value="{I_LINKTHREE}" /></dd>
+		</dl>
+
+		<dl >
+			<dt><label for="nlinkth">{L_D_L_NEWTAB} </label></dt>
+			<dd><input type="radio" class="radio" id="nlinkth" name="nlinkth" value="1"   <!-- IF N_LINK_TH -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="nlinkth" value="0" <!-- IF not N_LINK_TH -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		<dl>
+			<dt><label for="n_link_four">Fourth custom menu:</label></dt>
+			<dd>{L_NAME_MENU}{L_COLON}<input id="n_link_four" type="text" name="n_linkfour"  value="{N_LINKFOUR}" /><br />{L_LINK_MENU}{L_COLON}<input type="text" name="linkfour"  value="{LINKFOUR}" /> &nbsp; <br />{L_ICON_MENU}{L_COLON}<input type="text" name="i_linkfour"  value="{I_LINKFOUR}" /></dd>
+		</dl>
+
+		<dl >
+			<dt><label for="nlinkfo">{L_D_L_NEWTAB} </label></dt>
+			<dd><input type="radio" class="radio" id="nlinkfo" name="nlinkfo" value="1"   <!-- IF N_LINK_FO -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="nlinkfo" value="0" <!-- IF not N_LINK_FO -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+		<dl>
+			<dt><label for="n_link_five">Fifth custom menu:</label></dt>
+			<dd>{L_NAME_MENU}{L_COLON}<input id="n_link_five" type="text" name="n_linkfive"  value="{N_LINKFIVE}" /><br />{L_LINK_MENU}{L_COLON}<input type="text" name="linkfive"  value="{LINKFIVE}" /> &nbsp; <br />{L_ICON_MENU}{L_COLON}<input type="text" name="i_linkfive"  value="{I_LINKFIVE}" /></dd>
+		</dl>
+
+		<dl >
+			<dt><label for="nlinkfi">{L_D_L_NEWTAB} </label></dt>
+			<dd><input type="radio" class="radio" id="nlinkfi" name="nlinkfi" value="1"   <!-- IF N_LINK_FI -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+			<input type="radio" class="radio" name="nlinkfi" value="0" <!-- IF not N_LINK_FI -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+		</dl>
+			
+	
+	</fieldset>	
+<fieldset>
+		<legend>{L_FOOTER_SETTINGS}</legend>
+			<dl>
+				<dt><label for="n_f_link_one">First custom menu:</label></dt>
+				<dd>{L_NAME_MENU}{L_COLON}<input id="n_f_link_one" type="text" name="n_f_linkone"  value="{N_F_LINKONE}" /><br />{L_LINK_MENU}{L_COLON}<input type="text" name="flinkone"  value="{FLINKONE}" /> &nbsp;</dd>
+			</dl>
+			
+			<dl >
+				<dt><label for="nflinko">{L_D_L_NEWTAB} </label></dt>
+				<dd><input type="radio" class="radio" id="nflinko" name="nflinko" value="1"   <!-- IF N_F_LINK_O -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+				<input type="radio" class="radio" name="nflinko" value="0" <!-- IF not N_F_LINK_O -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+			</dl>
+			
+
+
+			<dl>
+				<dt><label for="n_f_link_two">Second custom menu:</label></dt>
+				<dd>{L_NAME_MENU}{L_COLON}<input id="n_f_link_two" type="text" name="n_f_linktwo"  value="{N_F_LINKTWO}" /><br />{L_LINK_MENU}{L_COLON}<input type="text" name="flinktwo"  value="{FLINKTWO}" /> &nbsp;</dd>
+			</dl>
+			
+			<dl>
+				<dt><label for="nflinkt">{L_D_L_NEWTAB} </label></dt>
+				<dd><input type="radio" class="radio" id="nflinkt" name="nflinkt" value="1"   <!-- IF N_F_LINK_T -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+				<input type="radio" class="radio" name="nflinkt" value="0" <!-- IF not N_F_LINK_T -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+			</dl>
+			
+			<dl>
+				<dt><label for="n_f_link_three">Third custom menu:</label></dt>
+				<dd>{L_NAME_MENU}{L_COLON}<input id="n_f_link_three" type="text" name="n_f_linkthree"  value="{N_F_LINKTHREE}" /><br />{L_LINK_MENU}{L_COLON}<input type="text" name="flinkthree"  value="{FLINKTHREE}" /> &nbsp;</dd>
+			</dl>
+			
+			<dl>
+				<dt><label for="nflinkth">{L_D_L_NEWTAB} </label></dt>
+				<dd><input type="radio" class="radio" id="nflinkth" name="nflinkth" value="1"   <!-- IF N_F_LINK_TH -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+				<input type="radio" class="radio" name="nflinkth" value="0" <!-- IF not N_F_LINK_TH -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+			</dl>
+
+			<dl>
+				<dt><label for="n_f_link_four">Fourth custom menu:</label></dt>
+				<dd>{L_NAME_MENU}{L_COLON}<input id="n_f_link_four" type="text" name="n_f_linkfour"  value="{N_F_LINKFOUR}" /><br />{L_LINK_MENU}{L_COLON}<input type="text" name="flinkfour"  value="{FLINKFOUR}" /> &nbsp;</dd>
+			</dl>
+			
+			<dl>
+				<dt><label for="nflinkfo">{L_D_L_NEWTAB} </label></dt>
+				<dd><input type="radio" class="radio" id="nflinkfo" name="nflinkfo" value="1"   <!-- IF N_F_LINK_FO -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+				<input type="radio" class="radio" name="nflinkfo" value="0" <!-- IF not N_F_LINK_FO -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+			</dl>
+
+			<dl>
+				<dt><label for="n_f_link_five">Fifth custom menu:</label></dt>
+				<dd>{L_NAME_MENU}{L_COLON}<input id="n_f_link_five" type="text" name="n_f_linkfive"  value="{N_F_LINKFIVE}" /><br />{L_LINK_MENU}{L_COLON}<input type="text" name="flinkfive"  value="{FLINKFIVE}" /> &nbsp;</dd>
+			</dl>
+			
+			<dl>
+				<dt><label for="nflinkfi">{L_D_L_NEWTAB} </label></dt>
+				<dd><input type="radio" class="radio" id="nflinkfi" name="nflinkfi" value="1"   <!-- IF N_F_LINK_FI -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp; 
+				<input type="radio" class="radio" name="nflinkfi" value="0" <!-- IF not N_F_LINK_FI -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
+			</dl>
+					<a href="http://beutheme.com/leno/icon/preview.html" target="_blank"><span>****************{L_SELECT_ICON_MENU}****************</span></a>
+			<hr>
+			<dl >
+				<dt><label>social</label></dt>
+				<dd>Facebook{L_COLON}<input id="link_facebook" type="text" name="link_facebook"  value="{LINKFACEBOOK}" /> &nbsp; <br /></dd>
+
+				<dd>twitter{L_COLON}<input id="link_twitter" type="text" name="link_twitter"  value="{LINKTWITTER}" /> &nbsp; <br /></dd>
+
+				<dd>YouTube{L_COLON}<input  id="link_youtube"  type="text" name="link_youtube"  value="{LINKYOUTUBE}" /> &nbsp; <br /></dd>
+
+				<dd>Linkedin{L_COLON}<input id="link_linkedin"  type="text" name="link_linkedin"  value="{LINKLINKEDIN}" /> &nbsp; <br /></dd>
+
+
+				<dd>Instagram{L_COLON}<input id="link_instagram"  type="text" name="link_instagram"  value="{LINKINSTAGRAM}" /> &nbsp; <br /></dd>
+
+			</dl>
+			<a href="http://beutheme.com/leno/icon/preview.html" target="_blank"><span>****************{L_SELECT_ICON_MENU}****************</span></a>
+			<hr>
+			<dl >
+				<dt><label>{L_F_FOOTER_TITLE}</label></dt>
+				<dd><input type="text" name="footer_title" value="{FOOTER_TITLE}" /></dd>
+			</dl>
+			<dl >
+				<dt><label>{L_F_FOOTER_TEXT}</label></dt>
+				<dd><input type="textare" name="footer_text" value="{FOOTER_TEXT}" /></dd>
+			</dl>	
+		</fieldset>			
+	<fieldset>
+		<legend>{L_ADS}</legend>
+		<dl>
+			<dt><label for="ads_sidebar_code">{L_ENTER_HTML_SIDEBAR}</label></dt>
+			<dd><input id="ads_sidebar_code" type="text" name="ads_sidebar_code" value="{ADS_SIDEBAR_CODE_TEXT}" />
+		</dl>	
+		<dl>
+			<dt><label for="ads_code">{L_ENTER_ADS}</label><p></p></dt>
+			<dd><input id="ads_code" type="text" name="ads_code" value="{ADS_CODE_TEXT}" />
+		</dl>		
+		<dl>
+			<dt><label for="ads_bottom_header">{L_WHERE_ADS}</label></dt>
+			<dd><input type="checkbox" class="checkbox"  name="ads_bottom_header" <!-- IF ADS_BOTTOM_HEADER == 'on' -->checked="checked"<!-- ENDIF -->  /> after header &nbsp; 
+			<input type="checkbox" class="checkbox" name="ads_top_footer"  <!-- IF ADS_TOP_FOOTER == 'on' -->checked="checked"<!-- ENDIF -->  /> before footer &nbsp; 
+			<input type="checkbox" class="checkbox" name="ads_banner_index_bottom_online"   <!-- IF ADS_INDEX_BOTTOM_ONLINE == 'on' -->checked="checked"<!-- ENDIF --> />  after online box &nbsp; 
+			<input type="checkbox" class="checkbox" name="ads_index_bottom_birthday"   <!-- IF ADS_INDEX_BOTTOM_BIRTHDAY == 'on'  -->checked="checked"<!-- ENDIF --> />  after birthday box  
+			</dd>
+		</dl>		
+	</fieldset>
+	
+	<fieldset>
+		<p class="submit-buttons">
+			{S_FORM_TOKEN}
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		</p>
+	</fieldset>	
+	
+</form>
+
+<!-- INCLUDE overall_footer.html -->

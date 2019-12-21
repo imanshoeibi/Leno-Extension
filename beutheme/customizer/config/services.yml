@@ -1,0 +1,14 @@
+parameters:
+    tables.customizer_table: %core.table_prefix%customizer
+services:
+    beutheme.customizer.listener:
+        class: beutheme\customizer\event\listener
+        arguments:
+        - '@template'
+        - '@user'
+        - '@dbal.conn'
+        - '@request'
+        - '%tables.customizer_table%'
+        - '@config'
+        tags:
+            - { name: event.listener }

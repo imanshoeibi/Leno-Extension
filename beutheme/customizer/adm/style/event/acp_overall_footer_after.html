@@ -1,0 +1,109 @@
+<!-- INCLUDEJS plugins.js -->
+<script>
+
+
+function colorop() {
+    var checkBox = document.getElementById("customizer_color");
+    var colorop = document.getElementById("color_op");
+    if (checkBox.checked == true){
+        colorop.style.display = "block";
+    } else {
+       colorop.style.display = "none";
+    }
+}
+
+
+function gradient() {
+    var checkBox = document.getElementById("gradient_color");
+    var gracolor = document.getElementById("gra_color");
+    var removegraa = document.getElementById("remove_gra");
+    if (checkBox.checked == true){
+        gracolor.style.display = "block";
+        removegraa.style.display = "block";
+    } else {
+       gracolor.style.display = "none";
+       removegraa.style.display = "none";
+    }
+}
+
+
+
+function back() {
+    var checkBox = document.getElementById("demth");
+    var para = document.getElementById("para");
+    var menufix = document.getElementById("menu_fix");
+    var gra = document.getElementById("gra");
+    var snow = document.getElementById("snow");
+    var gracolorr = document.getElementById("gra_color");
+    var removegra = document.getElementById("remove_gra");
+    var uplb = document.getElementById("uplb");
+    var uplb2 = document.getElementById("uplb2");
+    var uplb3 = document.getElementById("uplb3");
+    var uplb4 = document.getElementById("uplb4");
+    var mode = document.getElementById("mode");
+    var full = document.getElementById("full");
+    var u_sidebar = document.getElementById("u_sidebar");
+    var p_sidebar = document.getElementById("p_sidebar");
+    if (checkBox.checked == true){
+        para.style.display = "block";
+        menufix.style.display = "block";
+        gra.style.display = "block";
+        snow.style.display = "block";
+        gracolorr.style.display = "block";
+        removegra.style.display = "block";
+        uplb.style.display = "block";
+        uplb2.style.display = "block";
+        uplb3.style.display = "block";
+        uplb4.style.display = "block";
+        mode.style.display = "block";
+        full.style.display = "block";
+        u_sidebar.style.display = "block";
+        p_sidebar.style.display = "block";
+    } else {
+       para.style.display = "none";
+       menufix.style.display = "none";
+       gra.style.display = "none";
+       snow.style.display = "none";
+       gracolorr.style.display = "none";
+       removegra.style.display = "none";
+       uplb.style.display = "none";
+       uplb2.style.display = "none";
+       uplb3.style.display = "none";
+       uplb4.style.display = "none";
+       mode.style.display = "none";
+       full.style.display = "full";
+       u_sidebar.style.display = "none";
+       p_sidebar.style.display = "none";
+
+    }
+}
+
+function fix() {
+    var checkBox = document.getElementById("demt");
+    var menufixx = document.getElementById("menu_fix");
+    if (checkBox.checked == true){
+        menufixx.style.display = "block";
+    } else {
+       menufixx.style.display = "none";
+    }
+}
+
+function changelfont() {
+    var checkBox = document.getElementById("changefont");
+    var fonttheme = document.getElementById("font_theme");
+    if (checkBox.checked == true){
+        fonttheme.style.display = "block";
+    } else {
+       fonttheme.style.display = "none";
+    }
+}
+</script>
+<script>
+$( document ).ready(function() {
+    $("input#color_theme ,input#from_color , input#to_color").addClass("jscolor {width:243, height:150}");
+});
+
+
+
+</script>
+

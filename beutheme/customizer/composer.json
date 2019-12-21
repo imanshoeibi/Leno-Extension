@@ -1,0 +1,28 @@
+{
+    "name": "beutheme/customizer",
+    "type": "phpbb-extension",
+    "description": "beutheme",
+    "homepage": "http://www.beutheme.com",
+    "version": "2.0.0",
+    "time": "2018-12-13",
+	"license": "Private use only",
+    "authors": [
+        {
+            "name": "beutheme",
+            "homepage": "http://www.beutheme.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "phpbb/phpbb": ">=3.2.0",
+        "composer/installers": "~1.0.0"
+    },
+    "extra": {
+        "display-name": "beutheme",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.2.0"
+        }
+
+    }
+}

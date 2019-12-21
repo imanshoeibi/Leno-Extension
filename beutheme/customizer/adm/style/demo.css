@@ -1,0 +1,27 @@
+.leno dt label {
+	font-size: 13px;
+	font-weight: 500;
+}
+.leno fieldset dl {
+	margin: 10px 0 20px;
+}
+
+.leno fieldset p {
+	    margin-top: 12px;
+    font-size: 12px;
+}
+
+.leno .upload-logo , .leno .upload-favicon{
+	max-width: 100px;
+	margin: 5px 20px;
+}
+
+.leno .upload-logo-login {
+	max-width: 100px;
+	background: #000;
+	    margin: 5px 20px;
+}
+
+.leno .upload-background ,.leno .upload-ads {
+	max-width:450px
+}
